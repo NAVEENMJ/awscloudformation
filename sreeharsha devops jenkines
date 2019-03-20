@@ -1,0 +1,72 @@
+Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-0565af6e282977273
+
+sudo su
+apt update
+sudo add-apt-repository ppa:openjdk-r/ppa
+apt update
+
+sudo apt-get install openjdk-8-jdk
+
+sudo update-alternatives --config java
+java -version
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo 
+
+apt-key add -
+
+echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee 
+
+/etc/apt/sources.list.d/jenkins.list
+
+
+sudo apt-get update
+
+
+sudo apt-get install jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl enable start jenkins
+
+sudo systemctl status jenkins
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+watch..23.40...
+
+
+nano /etc/default/jenkins  ....port number change
+sudo service jenkins restart
+
+
+admin
+2d91c17bdc9c4e99b178f208b9618bd7
+
+
+General - SCM - Build Trigger - BuildEnv -Build - Postbuild action
+
+
+(37.58)
+
+#!/bin/bash
+echo "*********************"
+whoami
+echo "*********************"
+pwd
+echo "*********************"
+
+ls /var/lib/jenkins/workspace/test1
+
+tail /var/log/jenkins/jenkins.log
+watch tail /var/log/jenkins/jenkins.log  ....every 2secondes updating..
+
+
+#!/bin/bash
+echo "THE REPO IS BEEN DOWNLOADED"
+
+https://github.com/NAVEENMJ/webhooktesting/settings/hooks
+
+
+Payload URL
+http://ec2-54-210-183-8.compute-1.amazonaws.com/github-webhook/
+
